@@ -23,7 +23,10 @@ import com.migo.utils.R;
 import com.migo.utils.ShiroUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.crypto.hash.Sha256Hash;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.session.mgt.eis.SessionDAO;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.subject.support.DefaultSubjectContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,6 +39,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Collection;
 
 /**
  * 登录相关
@@ -47,6 +51,9 @@ import java.io.IOException;
 public class SysLoginController extends AbstractController {
     @Autowired
     private Producer producer;
+
+    @Autowired
+    private SessionDAO sessionDAO;
 
     @RequestMapping("captcha.jpg")
     public void captcha(HttpServletResponse response)throws ServletException, IOException {
@@ -69,6 +76,15 @@ public class SysLoginController extends AbstractController {
      */
     @PostMapping("/sys/login")
     public R login(String username, String password, String captcha)throws IOException {
+
+        Collection<Session> sessions = sessionDAO.getActiveSessions();
+        for (Session session : sessions) {
+            System.out.println("登录用户" + session.getAttribute(DefaultSubjectContext.PRINCIPALS_SESSION_KEY));
+            if (session.getAttribute(DefaultSubjectContext.PRINCIPALS_SESSION_KEY) != null) {
+                return R.error(session.getAttribute(DefaultSubjectContext.PRINCIPALS_SESSION_KEY)+"该用户已登录");
+            }
+        }
+
         String kaptcha = ShiroUtils.getKaptcha(Constants.KAPTCHA_SESSION_KEY);
         if(!captcha.equalsIgnoreCase(kaptcha)){
             return R.error("验证码不正确");

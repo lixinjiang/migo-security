@@ -44,18 +44,21 @@ public class UserRealm extends AuthorizingRealm {
 
     /**
      * 授权(验证权限时调用)
+     * 一系类的实体信息
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         SysUserEntity user = (SysUserEntity) principalCollection.getPrimaryPrincipal();
         Long userId = user.getUserId();
 
+        // 权限列表
         List<String> permsList;
 
         //系统管理员，拥有最高权限
         if (userId == 1) {
+            // 查询出所有的菜单SELECT * from sys_menu，包括按钮记录
             List<SysMenuEntity> menuList = sysMenuService.queryList(new HashMap<>());
-            permsList = menuList.stream()
+            permsList = menuList.stream()   // java8新特性，获取流java.util.stream
                     .parallel()
                     .map(SysMenuEntity::getPerms)
                     .collect(Collectors.toList());
@@ -64,6 +67,7 @@ public class UserRealm extends AuthorizingRealm {
                 permsList.add(menu.getPerms());
             }*/
         } else {
+            // 该用户下的权限
             permsList = sysUserService.queryAllPerms(userId);
         }
 
@@ -83,6 +87,7 @@ public class UserRealm extends AuthorizingRealm {
                 .flatMap(Collection::stream)
                 .collect(Collectors.toSet());
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        // 将权限放入认证信息里面
         info.setStringPermissions(permsSet);
         return info;
     }

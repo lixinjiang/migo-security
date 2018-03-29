@@ -23,8 +23,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author 知秋
- * @email fei6751803@163.com
+ *
  */
 public class AbstractController {
     protected Logger logger = LoggerFactory.getLogger(getClass());

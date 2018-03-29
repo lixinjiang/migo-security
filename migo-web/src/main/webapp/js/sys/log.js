@@ -2,7 +2,7 @@ $(function () {
     $("#jqGrid").jqGrid({
         url: '../sys/log/list',
         datatype: "json",
-        colModel: [			
+        colModel: [
 			{ label: 'id', name: 'id', width: 30, key: true },
 			{ label: '用户名', name: 'username', width: 50 }, 			
 			{ label: '用户操作', name: 'operation', width: 70 }, 			
@@ -20,14 +20,14 @@ $(function () {
         autowidth:true,
         multiselect: false,
         pager: "#jqGridPager",
-        jsonReader : {
+        jsonReader : {  /*回收的值*/
             root: "page.list",
             page: "page.currPage",
             total: "page.totalPage",
             records: "page.totalCount"
         },
-        prmNames : {
-            page:"page", 
+        prmNames : {    /*发送的参数*/
+            page:"page",
             rows:"limit", 
             order: "order"
         },

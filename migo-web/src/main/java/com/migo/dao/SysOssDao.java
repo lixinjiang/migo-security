@@ -21,9 +21,6 @@ import com.migo.entity.SysOssEntity;
 
 /**
  * 文件上传 Dao
- *
- * @author 知秋
- * @email fei6751803@163.com
  */
 public interface SysOssDao extends BaseDao<SysOssEntity> {
 }

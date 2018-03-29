@@ -33,9 +33,6 @@ import java.util.Map;
 
 /**
  * 定时任务Controller
- *
- * @author 知秋
- * @email fei6751803@163.com
  */
 @RestController
 @RequestMapping("/sys/schedule")

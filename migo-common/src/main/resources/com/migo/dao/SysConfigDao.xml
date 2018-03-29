@@ -66,5 +66,4 @@
 		</foreach>
 	</delete>
 	
-	
 </mapper>

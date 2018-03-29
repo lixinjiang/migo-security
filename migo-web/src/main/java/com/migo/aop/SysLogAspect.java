@@ -37,8 +37,7 @@ import java.lang.reflect.Method;
 import java.util.Date;
 
 /**
- * @author 知秋
- * @email fei6751803@163.com
+ * 描述：织入aspect切面
  */
 @Aspect
 @Component
