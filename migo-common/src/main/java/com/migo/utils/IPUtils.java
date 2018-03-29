@@ -24,8 +24,7 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author 知秋
- * @email fei6751803@163.com
+ * IP工具
  */
 public class IPUtils {
 

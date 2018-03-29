@@ -20,8 +20,7 @@ package com.migo.utils;
 import java.util.stream.Stream;
 
 /**
- * @author 知秋
- * @email fei6751803@163.com
+ *
  */
 @FunctionalInterface
 public interface TailCall<T> {

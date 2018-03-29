@@ -23,8 +23,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author 知秋
- * @email fei6751803@163.com
+ * 分页
  */
 @Data
 public class PageUtils implements Serializable {

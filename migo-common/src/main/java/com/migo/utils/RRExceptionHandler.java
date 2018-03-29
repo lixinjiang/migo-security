@@ -30,9 +30,6 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 异常处理器
- *
- * @author 知秋
- * @email fei6751803@163.com
  */
 public class RRExceptionHandler implements HandlerExceptionResolver {
     private Logger logger = LoggerFactory.getLogger(getClass());

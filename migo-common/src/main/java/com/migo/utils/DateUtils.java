@@ -22,9 +22,6 @@ import java.util.Date;
 
 /**
  * 日期处理类
- *
- * @author 知秋
- * @email fei6751803@163.com
  */
 public class DateUtils {
 

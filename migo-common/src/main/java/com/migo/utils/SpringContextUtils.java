@@ -23,9 +23,6 @@ import org.springframework.context.ApplicationContextAware;
 
 /**
  * SpringContext 工具类
- *
- * @author 知秋
- * @email fei6751803@163.com
  */
 public class SpringContextUtils implements ApplicationContextAware {
     public static ApplicationContext applicationContext;

@@ -22,9 +22,6 @@ import java.util.Map;
 
 /**
  * 返回数据
- *
- * @author 知秋
- * @email fei6751803@163.com
  */
 public class R extends HashMap<String, Object> {
 

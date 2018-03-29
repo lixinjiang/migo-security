@@ -19,9 +19,6 @@ package com.migo.utils;
 
 /**
  * 系统参数相关Key
- *
- * @author 知秋
- * @email fei6751803@163.com
  */
 public class ConfigConstant {
     /**

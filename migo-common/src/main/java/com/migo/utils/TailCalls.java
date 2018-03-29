@@ -18,8 +18,7 @@
 package com.migo.utils;
 
 /**
- * @author 知秋
- * @email fei6751803@163.com
+ *
  */
 public class TailCalls {
     public static <T> TailCall<T> call(final TailCall<T> nextCall) {

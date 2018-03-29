@@ -31,8 +31,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author 知秋
- * @email fei6751803@163.com
+ *
  */
 @Component
 public class AuthorizationInterceptor extends HandlerInterceptorAdapter {

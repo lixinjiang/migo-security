@@ -23,8 +23,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author 知秋
- * @email fei6751803@163.com
+ * HttpContext
  */
 public class HttpContextUtils {
     public static HttpServletRequest getHttpServletRequest() {
