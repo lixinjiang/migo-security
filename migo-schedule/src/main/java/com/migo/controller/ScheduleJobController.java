@@ -48,8 +48,10 @@ public class ScheduleJobController {
      * 定时任务列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("sys:schedule:list")
+    @RequiresPermissions("sys:schedule:list")   // 权限认证，查询的认证
     public R list(@RequestParam Map<String, Object> params){
+        System.out.println(params);
+        System.out.println("你好啊");
         //查询列表数据
         Query query = new Query(params);
         List<ScheduleJobEntity> jobList = scheduleJobService.queryList(query);

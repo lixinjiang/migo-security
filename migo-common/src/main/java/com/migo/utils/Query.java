@@ -20,21 +20,25 @@ package com.migo.utils;
 import com.migo.defence.SQLFilter;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @author 知秋
- * @email fei6751803@163.com
+ * 说明：分页查询封装类
  */
 @Data
-public class Query extends LinkedHashMap<String, Object> {
+public class Query extends LinkedHashMap<String, Object> implements Serializable{
     private static final long serialVersionUID = 1L;
     //当前页码
     private int page;
     //每页条数
     private int limit;
 
+    /**
+     * 有参构造，参数有两个，page，limit
+     * @param params
+     */
     public Query(Map<String, Object> params){
         this.putAll(params);
 

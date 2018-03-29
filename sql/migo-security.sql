@@ -11,6 +11,8 @@ Target Server Version : 50536
 File Encoding         : 65001
 
 Date: 2017-04-10 18:18:36
+
+库名介绍https://www.cnblogs.com/aflyun/p/6515813.html
 */
 
 SET FOREIGN_KEY_CHECKS=0;
